@@ -31,6 +31,7 @@ mongodb.MongoClient.connect(
   process.env.MONGODB_URI,
   function(err, database) {
     if (err) {
+      console.log(process.env.MONGODB_URI);
       console.log(err);
       process.exit(1);
     }
