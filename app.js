@@ -37,7 +37,8 @@ mongodb.MongoClient.connect(
     }
 
     // Save database object from the callback for reuse.
-    db = database;
+    // mongo version ^3.0 will return a client object containing the database object
+    db = database.db("js-based");
     console.log("Database connection ready");
 
     // Initialize the app.
