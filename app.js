@@ -1,17 +1,12 @@
-// grab express
 var express = require('express');
-var path = require('path');
 var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
-
-// get objectId
 var ObjectID = mongodb.ObjectID;
 
-// create an express app
+var CONTACTS_COLLECTION = 'contacts';
+
 var app = express();
 app.use(bodyParser.json());
-
-var CONTACTS_COLLECTION = 'contacts';
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
